@@ -1,5 +1,6 @@
 package com.java.backend.restfulAPI.Student;
 
+import com.java.backend.restfulAPI.Course.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +40,7 @@ public class StudentController {
         return ss.getStudentById(studentId);
     }
 
-    
+
     @PutMapping("/updatestudent")
     public ResponseEntity<Long> updateStudent(@RequestBody Student student){
         System.out.println(student);

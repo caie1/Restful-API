@@ -1,5 +1,6 @@
 package com.java.backend.restfulAPI.Student;
 
+import com.java.backend.restfulAPI.Course.Course;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface StudentService {
     void updateStudent(Student student);
     void deleteStudentById(Long studentId);
     List<Student> getAllStudent();
+    Student addCourse(Long studentId, Course course);
 }

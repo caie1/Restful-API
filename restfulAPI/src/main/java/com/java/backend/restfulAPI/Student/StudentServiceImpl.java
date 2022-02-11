@@ -1,5 +1,7 @@
 package com.java.backend.restfulAPI.Student;
 
+import com.java.backend.restfulAPI.Course.Course;
+import com.java.backend.restfulAPI.Course.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -45,5 +47,13 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public List<Student> getAllStudent() {
         return repository.findAll();
+    }
+
+    @Override
+    public Student addCourse(Long studentId, Course course) {
+        Student stu = repository.findById(studentId).get();
+        stu.getEnrolledCourses().add(course);
+        course.getEnrolls().add(stu);
+        return stu;
     }
 }
