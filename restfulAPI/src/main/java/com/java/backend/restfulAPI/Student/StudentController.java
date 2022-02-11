@@ -11,9 +11,9 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/students")
 public class StudentController {
-    @Autowired
     private final StudentService ss;
 
+    @Autowired
     public StudentController(StudentService ss) {
         this.ss = ss;
     }
@@ -39,6 +39,7 @@ public class StudentController {
         return ss.getStudentById(studentId);
     }
 
+    
     @PutMapping("/updatestudent")
     public ResponseEntity<Long> updateStudent(@RequestBody Student student){
         System.out.println(student);

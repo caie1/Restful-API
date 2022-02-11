@@ -9,9 +9,9 @@ import java.util.List;
 @Service
 public class CourseServiceImpl implements CourseService{
 
-    @Autowired
     private final CourseRepository repository;
 
+    @Autowired
     public CourseServiceImpl(CourseRepository repository) {
         this.repository = repository;
     }

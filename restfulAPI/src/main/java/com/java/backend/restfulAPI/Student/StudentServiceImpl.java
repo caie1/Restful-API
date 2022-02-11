@@ -8,9 +8,10 @@ import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService{
-    @Autowired
+
     private final StudentRepository repository;
 
+    @Autowired
     public StudentServiceImpl(StudentRepository repository) {
         this.repository = repository;
     }

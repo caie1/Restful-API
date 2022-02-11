@@ -11,9 +11,10 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/courses")
 public class CourseController {
-    @Autowired
+
     private final CourseService cs;
 
+    @Autowired
     public CourseController(CourseService cs) {
         this.cs = cs;
     }
