@@ -1,11 +1,14 @@
 package com.java.backend.restfulAPI.Student;
 
+import com.java.backend.restfulAPI.Course.Course;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="Student")
@@ -20,6 +23,14 @@ public class Student {
 
     @Column(name="name")
     private String name;
+
+    @ManyToMany
+    @JoinTable(
+            name = "enrollment",
+            joinColumns = @JoinColumn(name = "s_id"),
+            inverseJoinColumns = @JoinColumn(name = "c_id")
+    )
+    private Set<Course> enrolledCourses = new HashSet<>();
 
     @Override
     public String toString() {
@@ -39,6 +50,6 @@ public class Student {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id);
     }
 }

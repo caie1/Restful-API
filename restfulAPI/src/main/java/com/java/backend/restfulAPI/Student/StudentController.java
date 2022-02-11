@@ -20,7 +20,7 @@ public class StudentController {
 
     @GetMapping("/testing")
     public String testing(){
-        return "hello world";
+        return "!@#$$%%^^&&*(";
     }
 
     @PostMapping
