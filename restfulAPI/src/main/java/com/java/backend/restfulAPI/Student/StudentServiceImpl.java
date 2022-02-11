@@ -53,7 +53,8 @@ public class StudentServiceImpl implements StudentService{
     public Student addCourse(Long studentId, Course course) {
         Student stu = repository.findById(studentId).get();
         stu.getEnrolledCourses().add(course);
-        course.getEnrolls().add(stu);
+       // course.getEnrolls().add(stu);
+        repository.save(stu);
         return stu;
     }
 }
